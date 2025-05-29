@@ -6,7 +6,7 @@ import math
 
 
 # === ESP Setup ===
-esp_ip = "http://192.168.201.178"
+esp_ip = "http://192.168.201.113"
 current_speed = 0  # Global current speed
 # === Function to send values to ESP ===
 def send_to_esp(speed, steer=0):
@@ -135,7 +135,8 @@ try:
         if avg_distance >= 10:
             send_to_esp(0, 0)  # stop
         else:
-            send_to_esp(-100, 0)  # keep moving  
+            motor_speeds(steer_to_send, current_speed)
+            send_to_esp(current_speed, steer_to_send)  # keep moving  
         print(avg_distance)
         print(f"Distance Right: {distance_r:.2f} cm | Left: {distance_l:.2f} cm")
 

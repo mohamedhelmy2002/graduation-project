@@ -4,7 +4,7 @@ import requests
 import re
 
 # === ESP Setup ===
-esp_ip = "http://192.168.201.178"
+esp_ip = "http://192.168.201.113"
 current_speed = 0  # Global current speed
 # === Function to send values to ESP ===
 def send_to_esp(speed, steer=0):
